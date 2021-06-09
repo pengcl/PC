@@ -976,22 +976,22 @@
         position: absolute;
         bottom: 3px;
         left: 10px;
-        width: 0;
-        height: 71px;
+        width: 235px;
+        height: 85px;
         transition: all 0.5s ease-in-out;
-        visibility: hidden;
-        opacity: 0;
+        visibility: visible;
+        opacity: 1;
         overflow: hidden;
 
         img {
           display: block;
-          width: 234px;
-          height: 71px;
+          width: 235px;
+          height: 85px;
         }
 
         &.show_line {
-          width: 234px;
-          height: 71px;
+          width: 235px;
+          height: 85px;
           visibility: visible;
           opacity: 1;
         }
@@ -1003,9 +1003,7 @@
         width: 200px;
         bottom: 75px;
         margin-left: -50px;
-        opacity: 0;
-        transition: opacity 0.5s ease-in-out;
-        transition-delay: 0.5s;
+        opacity: 1;
 
         p {
           color: #fff;
@@ -1032,6 +1030,17 @@
 
       }
 
+      &.point_left {
+        .line {
+          transform: rotateY(180deg);
+          left: auto;
+          right: 10px;
+        }
+        .text {
+          left: auto;
+          right: 100px;
+        }
+      }
     }
   }
 
