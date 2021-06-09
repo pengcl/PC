@@ -1,0 +1,131 @@
+<div class="bg-solution" ng-if="item" ng-style="{'background-image':'url({{apiPrefix + item.poster[0].url}})'}"></div>
+<div class="product-text">
+    <h1>产品中心</h1>
+</div>
+
+<div class="content-p" ng-style="{'margin-top': width <= 568 ? '20px' : '161px'}" ng-if="articles">
+    <h1 ng-bind="articles[0] | lan:'title'"></h1>
+    <h2 ng-bind="articles[0] | lan:'description'"></h2>
+    <div ng-bind-html="articles[0] | lan : 'body' | html"></div>
+    <div class="gallery">
+        <div class="header" ng-mouseover="articleMouseOver(12)" ng-mouseleave="articleMouseLeave(12)">
+            <a href="/product/item/{{articles[12].menu.id}}">
+                <img ng-src="{{apiPrefix+articles[12].thumb.url}}">
+                <div class="title" ng-if="show['show12']"><span ng-bind="articles[12] | lan:'title'"></span></div>
+                <div class="title" ng-if="width <= 568"><span ng-bind="articles[12] | lan:'title'"></span></div>
+            </a>
+        </div>
+
+        <div class="right" ng-mouseover="articleMouseOver(4)" ng-mouseleave="articleMouseLeave(4)">
+            <a href="/product/item/{{articles[4].menu.id}}">
+                <img ng-src="{{apiPrefix+articles[4].thumb.url}}">
+                <div class="title" ng-if="show['show4']"><span ng-bind="articles[4] | lan:'title'"></span></div>
+                <div class="title" ng-if="width <= 568"><span ng-bind="articles[4] | lan:'title'"></span></div>
+            </a>
+        </div>
+        <div class="left">
+            <div class="middle"
+                 ng-style="{'margin-right': width <= 568 ? '0' : '20px'}"
+                 ng-mouseover="articleMouseOver(2)"
+                 ng-mouseleave="articleMouseLeave(2)">
+                <a href="/product/item/{{articles[2].menu.id}}">
+                    <img ng-src="{{apiPrefix+articles[2].thumb.url}}">
+                    <div class="title" ng-if="show['show2']"><span ng-bind="articles[2] | lan:'title'"></span></div>
+                    <div class="title" ng-if="width <= 568"><span ng-bind="articles[2] | lan:'title'"></span></div>
+                </a>
+            </div>
+            <div class="middle" ng-mouseover="articleMouseOver(3)" ng-mouseleave="articleMouseLeave(3)">
+                <a href="/product/item/{{articles[3].menu.id}}">
+                    <img ng-src="{{apiPrefix+articles[3].thumb.url}}">
+                    <div class="title" ng-if="show['show3']"><span ng-bind="articles[3] | lan:'title'"></span></div>
+                    <div class="title" ng-if="width <= 568"><span ng-bind="articles[3] | lan:'title'"></span></div>
+                </a>
+            </div>
+            <div class="top" ng-mouseover="articleMouseOver(1)" ng-mouseleave="articleMouseLeave(1)">
+                <a href="/product/item/{{articles[1].menu.id}}">
+                    <img ng-src="{{apiPrefix+articles[1].thumb.url}}">
+                    <div class="title" ng-if="show['show1']"><span ng-bind="articles[1] | lan:'title'"></span></div>
+                    <div class="title" ng-if="width <= 568"><span ng-bind="articles[1] | lan:'title'"></span></div>
+                </a>
+            </div>
+        </div>
+        <!--<div class="product1 ng-owl"
+             ng-if="imageList"
+             images="imageList"
+             scroll="true"
+             items="1"
+             out="true"
+             name="'.product1'"></div>-->
+    </div>
+
+</div>
+
+<div class="content-p" ng-if="articles">
+    <h1 ng-bind="articles[5] | lan:'title'"></h1>
+    <h2 ng-bind="articles[5] | lan:'description'"></h2>
+    <div ng-bind-html="articles[5] | lan : 'body' | html"></div>
+    <div class="gallery">
+        <div class="left" style="margin-left: 0">
+            <div class="middle"
+                 ng-style="{'margin-right': width <= 568 ? '0' : '20px'}"
+                 ng-mouseover="articleMouseOver(8)"
+                 ng-mouseleave="articleMouseLeave(8)">
+                <a href="/product/item/{{articles[8].menu.id}}">
+                    <img ng-src="{{apiPrefix+articles[8].thumb.url}}">
+                    <div class="title" ng-if="show['show8']"><span ng-bind="articles[8] | lan:'title'"></span></div>
+                    <div class="title" ng-if="width <= 568"><span ng-bind="articles[8] | lan:'title'"></span></div>
+                </a>
+            </div>
+            <div class="middle" ng-mouseover="articleMouseOver(7)" ng-mouseleave="articleMouseLeave(7)">
+                <a href="/product/item/{{articles[7].menu.id}}">
+                    <img ng-src="{{apiPrefix+articles[7].thumb.url}}">
+                    <div class="title" ng-if="show['show7']"><span ng-bind="articles[7] | lan:'title'"></span></div>
+                    <div class="title" ng-if="width <= 568"><span ng-bind="articles[7] | lan:'title'"></span></div>
+                </a>
+            </div>
+            <div class="top" ng-mouseover="articleMouseOver(10)" ng-mouseleave="articleMouseLeave(10)">
+                <a href="/product/item/{{articles[10].menu.id}}">
+                    <img ng-src="{{apiPrefix+articles[10].thumb.url}}">
+                    <div class="title" ng-if="show['show10']"><span ng-bind="articles[10] | lan:'title'"></span></div>
+                    <div class="title" ng-if="width <= 568"><span ng-bind="articles[10] | lan:'title'"></span></div>
+                </a>
+            </div>
+
+        </div>
+        <div class="right"
+             ng-style="{'margin-left': width <= 568 ? '0' : '20px'}"
+             ng-mouseover="articleMouseOver(9)"
+             ng-mouseleave="articleMouseLeave(9)">
+            <a href="/product/item/{{articles[9].menu.id}}">
+                <img ng-src="{{apiPrefix+articles[9].thumb.url}}">
+                <div class="title" ng-if="show['show9']"><span ng-bind="articles[9] | lan:'title'"></span></div>
+                <div class="title" ng-if="width <= 568"><span ng-bind="articles[9] | lan:'title'"></span></div>
+            </a>
+        </div>
+        <div class="bottom">
+            <div class="bottom-right" ng-mouseover="articleMouseOver(11)" ng-mouseleave="articleMouseLeave(11)">
+                <a href="/product/item/{{articles[11].menu.id}}">
+                    <img ng-src="{{apiPrefix+articles[11].thumb.url}}">
+                    <div class="title" ng-if="show['show11']"><span ng-bind="articles[11] | lan:'title'"></span></div>
+                    <div class="title" ng-if="width <= 568"><span ng-bind="articles[11] | lan:'title'"></span></div>
+                </a>
+            </div>
+
+            <div class="bottom-left" ng-mouseover="articleMouseOver(6)" ng-mouseleave="articleMouseLeave(6)">
+                <a href="/product/item/{{articles[6].menu.id}}">
+                    <img ng-src="{{apiPrefix+articles[6].thumb.url}}">
+                    <div class="title" ng-if="show['show6']"><span ng-bind="articles[6] | lan:'title'"></span></div>
+                    <div class="title" ng-if="width <= 568"><span ng-bind="articles[6] | lan:'title'"></span></div>
+                </a>
+            </div>
+        </div>
+        <!--<div class="product2 ng-owl"
+             ng-if="imageList2"
+             images="imageList2"
+             scroll="true"
+             items="1"
+             out="true"
+             name="'.product2'"></div>-->
+    </div>
+
+</div>

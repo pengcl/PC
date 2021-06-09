@@ -1,0 +1,17 @@
+<div class="bg-solution" ng-if="item" ng-style="{'background-image':'url({{apiPrefix + item.thumb.url}})'}"></div>
+<div class="synopsis-text">
+    <h1>让城市更智慧&nbsp;&nbsp;&nbsp;&nbsp;让世界更安全</h1>
+    <p>MAKE A SMARTER CITY AND A SAFER WORLD</p>
+</div>
+
+<div class="classic-case">
+    <div class="case-gallery">
+        <div class="gallery-item" ng-repeat="item in imgs track by $index"  lightbox="imgs" index="$index">
+            <a href="javascript:;"
+               class="lightbox-trigger">
+                <img ng-src="{{item}}">
+            </a>
+        </div>
+    </div>
+</div>
+

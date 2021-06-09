@@ -1,0 +1,143 @@
+@import "../../../sass/variables";
+
+.owl-carousel {
+
+
+  .carousel-item {
+    height: 600px;
+    width: 100%;
+    display: block;
+    background-repeat: no-repeat;
+    background-position: center center;
+    background-size: cover;
+
+    .banner-content {
+      color: $color-empty;
+      padding: 120px 0 0 100px;
+
+      h2 {
+        font-size: 30px;
+        margin: 0 0 20px;
+
+        em, span {
+          display: block;
+          color: #000;
+        }
+      }
+
+      p {
+        font-size: 16px;
+        font-weight: 400;
+        width: 420px;
+      }
+
+      a {
+        width: 120px;
+        height: 40px;
+        background: linear-gradient(90deg, rgba(255, 255, 255, 0) 0%, rgba(255, 255, 255, 0.25) 100%);
+        border-radius: 4px;
+        border: 1px solid rgba(255, 255, 255, 1);
+        display: block;
+        text-align: center;
+        line-height: 38px;
+        color: $color-empty;
+        text-decoration: none;
+        font-size: 16px;
+        font-weight: 500;
+        margin-top: 40px;
+      }
+    }
+  }
+
+  /*.owl-nav.disabled {
+    display: block;
+
+    .owl-prev, .owl-next {
+      &:focus {
+        outline: none;
+      }
+    }
+
+    .owl-prev {
+      position: absolute;
+      top: 55%;
+      left: 67px;
+
+      &:before {
+        content: '';
+        background: url("/images/index/icon_left.png") no-repeat center center;
+        background-size: cover;
+        display: block;
+        width: 36px;
+        height: 36px;
+        position: absolute;
+      }
+    }
+
+    .owl-next {
+      position: absolute;
+      top: 55%;
+      right: 120px;
+
+      &:before {
+        content: '';
+        background: url("/images/index/icon_right.png") no-repeat center center;
+        background-size: cover;
+        display: block;
+        width: 36px;
+        height: 36px;
+        position: absolute;
+      }
+    }
+  }*/
+
+  .owl-dots {
+    position: absolute;
+    width: 100%;
+    bottom: 70px;
+    text-align: center;
+
+
+    .owl-dot {
+      &:focus {
+        outline: none;
+      }
+
+      span {
+        &:focus {
+          outline: none;
+        }
+      }
+    }
+
+    button {
+      display: inline-block;
+
+      span {
+        border-radius: 0;
+        width: 30px;
+        height: 3px;
+        margin: 5px;
+        display: block;
+        background-color: $color-empty;
+        opacity: 0.5;
+      }
+
+      &.active span {
+        background-color: $color-empty;
+        opacity: 1;
+      }
+    }
+  }
+}
+
+
+@media screen and (max-width: 750px) {
+  .owl-carousel {
+    .carousel-item {
+      height: 371px !important;
+    }
+  }
+
+
+}

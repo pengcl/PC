@@ -1,0 +1,27 @@
+<div class="bg-solution" ng-if="item" ng-style="{'background-image':'url({{apiPrefix + item.poster[0].url}})'}"></div>
+<div class="case-text">
+    <h1>经典案例</h1>
+</div>
+
+<div class="case-item">
+    <div class="container">
+        <h1 class="case-header"><span class="title">{{currentType}}</span><span class="subtitle">&nbsp;&nbsp;&nbsp;&nbsp;/Party And Government Organs</span></h1>
+
+        <div class="case-list">
+            <div class="case-list-item" ng-repeat="item in articles">
+                <a href="/article/item/{{item.id}}" style="text-decoration: none">
+                    <div class="thumb">
+                        <img ng-src="{{apiPrefix+item.thumb.url}}">
+                    </div>
+                    <div class="text">
+                        <h2 ng-bind="item | lan:'title'"></h2>
+                        <p ng-bind="item | lan:'description'"></p>
+                        <a href="/article/item/{{item.id}}" class="more">
+                            <span>More<i></i></span>
+                        </a>
+                    </div>
+                </a>
+            </div>
+        </div>
+    </div>
+</div>

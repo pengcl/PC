@@ -1,0 +1,24 @@
+<div class="owl-carousel">
+    <div ng-repeat="image in images"
+         ng-if="items && image.url"
+         repeat-finish="renderFinish()"
+         href="javascript:;"
+         class="carousel-item item"
+         ng-style="{'background-image':'url({{apiPrefix + image.url}})'}">
+    </div>
+    <a href="/article/item/{{image.id}}" ng-if="type === 'case'" ng-repeat="image in images"
+       repeat-finish="renderFinish()">
+        <div class="carousel-item item"
+             ng-style="{'background-image':'url({{apiPrefix + image.thumb.url}})'}">
+        </div>
+    </a>
+    <div ng-if="type === 'solution'"
+         ng-repeat="item in solutions"
+         ng-click="select(item.content_type.id)"
+         ng-class="{'selected' : currentId === item.content_type.id}">
+        <div class="solution_logo">
+            <img ng-src="/images/solution/icon_{{currentId === item.content_type.id ? item.content_type.code + '_hover' : item.content_type.code}}.png">
+        </div>
+        <p>{{item.content_type | lan:'name'}}</p>
+    </div>
+</div>

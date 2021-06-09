@@ -1,0 +1,236 @@
+.resource-text {
+  position: absolute;
+  top: 232px;
+  right: 138px;
+
+  @media screen and (max-width: 568px) {
+    display: none;
+  }
+
+  h1 {
+    font-weight: 400;
+    font-size: 58px;
+    color: rgb(249, 247, 247);
+    line-height: 86px;
+  }
+}
+
+
+.content-r {
+  width: 1200px;
+  margin: 100px auto;
+
+  @media screen and (max-width: 568px) {
+    width: 100%;
+    margin: 30px auto;
+  }
+
+  .gallery-resource1, .gallery-resource2 {
+    width: 100%;
+    margin-bottom: 100px;
+
+    @media screen and (max-width: 568px) {
+      padding: 0 10px;
+      margin-bottom: 20px;
+    }
+
+    .gallery-item {
+      width: 580px;
+
+      @media screen and (max-width: 568px) {
+        width: 100%;
+      }
+
+      h1 {
+        .title {
+          color: rgba(0, 104, 183, 1);
+          font-size: 22px;
+          font-weight: 700;
+          margin-right: 10px;
+          position: relative;
+
+          &:after {
+            content: '';
+            background: rgba(0, 104, 183, 1);
+            width: 96px;
+            height: 1px;
+            position: absolute;
+            left: 0;
+            bottom: -10px;
+          }
+        }
+
+        .subtitle {
+          color: rgba(170, 167, 167, 0.67);
+          font-size: 14px;
+          position: relative;
+
+          &:after {
+            content: '';
+            background: rgba(170, 167, 167, 0.67);
+            width: 115px;
+            height: 1px;
+            position: absolute;
+            left: -3px;
+            bottom: -11.5px;
+          }
+        }
+      }
+
+      img {
+        margin-top: 50px;
+        width: 100%;
+        height: auto;
+        display: block;
+
+        @media screen and (max-width: 568px){
+          margin-top: 30px;
+        }
+      }
+
+    }
+  }
+
+  .resource-content1, .resource-content2, .resource-content3 {
+    width: 1200px;
+    margin: 0 auto;
+
+    @media screen and (max-width: 568px) {
+      width: 100%;
+      padding: 0 10px;
+    }
+
+    h1 {
+      .title {
+        color: rgba(0, 104, 183, 1);
+        font-size: 22px;
+        font-weight: 700;
+        margin-right: 10px;
+        position: relative;
+
+        &:after {
+          content: '';
+          background: rgba(0, 104, 183, 1);
+          width: 96px;
+          height: 1px;
+          position: absolute;
+          left: 0;
+          bottom: -10px;
+        }
+      }
+
+      .subtitle {
+        color: rgba(170, 167, 167, 0.67);
+        font-size: 14px;
+        position: relative;
+
+        &:after {
+          content: '';
+          background: rgba(170, 167, 167, 0.67);
+          width: 145px;
+          height: 1px;
+          position: absolute;
+          left: -9px;
+          bottom: -11.5px;
+        }
+      }
+    }
+
+    .gallery-case {
+      width: 100%;
+      margin-top: 30px;
+
+      .gallery-item {
+        width: 580px;
+        display: inline-block;
+        overflow: hidden;
+
+        @media screen and (max-width: 568px) {
+          width: 100%;
+        }
+
+        &:hover {
+          img {
+            -webkit-transform: scale(1.08);
+            -ms-transform: scale(1.08);
+            transform: scale(1.08);
+          }
+
+          .gallery-content {
+            h3 {
+              color: #0072bc;
+            }
+          }
+        }
+
+        &:first-child {
+          margin-right: 40px;
+
+          @media screen and (max-width: 568px) {
+            margin-right: 0;
+          }
+        }
+
+        img {
+          width: 100%;
+          height: auto;
+          display: block;
+          transition: all .36s ease;
+
+        }
+
+        .gallery-content {
+          height: 165px;
+          padding: 30px 0 20px;
+          position: relative;
+
+          @media screen and (max-width: 568px) {
+            height: auto;
+          }
+
+          h3 {
+            font-weight: 700;
+            font-size: 20px;
+            color: rgb(16, 16, 16);
+            line-height: 29px;
+            margin-bottom: 20px;
+            text-overflow: ellipsis;
+            overflow: hidden;
+            white-space: nowrap;
+          }
+
+          p {
+            font-weight: 400;
+            font-size: 16px;
+            color: rgb(16, 16, 16);
+            line-height: 24px;
+          }
+
+
+        }
+      }
+    }
+  }
+
+  .resource-content2 {
+    h1 {
+      .subtitle {
+        &:after {
+          width: 120px;
+        }
+      }
+    }
+  }
+
+  .resource-content3 {
+    h1 {
+      .subtitle {
+        &:after {
+          width: 150px;
+        }
+      }
+    }
+  }
+
+
+}

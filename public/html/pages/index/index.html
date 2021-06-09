@@ -1,0 +1,207 @@
+<div class="bannerbox ng-owl"
+     ng-if="imageList"
+     autoplay="true"
+     images="imageList"
+     items="1"></div>
+
+<div class="banner-text" ng-if="imageList">
+    <h1>杰创智能</h1>
+    <p>中国领先的智慧城市和智慧公共安全服务商</p>
+</div>
+
+<div class="index-content">
+    <div class="index-middle-content">
+        <div class="index-synopsis" ng-if="item">
+            <div class="synopsis-content">
+                <p ng-bind="item | lan:'description'"></p>
+                <a href="/investor/basic/24">
+                    <span>More<i></i></span>
+                </a>
+            </div>
+            <div class="index-img">
+                <img ng-src="{{apiPrefix+item.thumb.url}}">
+            </div>
+
+        </div>
+    </div>
+</div>
+<div class="solution">
+    <div class="solution-content">
+        <h1><span class="title">解决方案</span><span class="subtitle">/ Solution</span></h1>
+        <div class="solution-type">
+            <!--<div class="prev" ng-click="prev()"><img src="/images/index/icon_left_hover.png"></div>-->
+            <div class="owl-carousel owl-theme">
+                <div ng-repeat="item in solutions"
+                     repeat-finish="solutionsRepeat()"
+                     ng-click="select(item.content_type.id)"
+                     ng-class="{'selected' : currentId === item.content_type.id}">
+                    <div class="solution_logo">
+                        <img ng-src="/images/solution/icon_{{currentId === item.content_type.id ? item.content_type.code + '_hover' : item.content_type.code}}.png">
+                    </div>
+                    <p>{{item.content_type | lan:'name'}}</p>
+                </div>
+            </div>
+            <!-- <div class="next" ng-click="next()"><img src="/images/index/icon_right_hover.png"></div>-->
+        </div>
+        <div class="solution-banner" ng-if="solution">
+            <a href="/article/item/{{solution.id}}">
+                <img ng-src="{{apiPrefix+solution.thumb.url}}"/>
+                <div class="banner-title">
+                    <span class="left" ng-bind="solution | lan:'title'"></span>
+                    <span class="right">More</span>
+                </div>
+            </a>
+        </div>
+    </div>
+
+</div>
+
+<div class="case">
+    <div class="bg"></div>
+    <div class="case-content">
+        <h1><span class="title">经典案例</span><span class="subtitle">/ Classic cases</span></h1>
+    </div>
+    <div class="swiper">
+        <ul class="pic">
+            <li ng-repeat="case in caseList track by $index"
+                class="{{$index === 0 ? 'now' : $index === 1 ? 'next' : ''}}"
+                repeat-finish="renderFinish()">
+                <a href="/article/item/{{case.id}}"><img ng-src="{{apiPrefix+case.thumb.url}}"/></a>
+            </li>
+        </ul>
+        <ol class="cricle" style="display: none"></ol>
+        <div class="btns">
+            <a href="javascript:;" class="leftbtn" style="float: left; margin-left: 6px;"></a>
+            <a href="javascript:;" class="rightbtn" style="float: right; margin-right: 0;"></a>
+        </div>
+        <div class="leftBox"></div>
+        <div class="rightBox"></div>
+    </div>
+
+    <div class="mobile-swiper">
+        <!--<div class="prev" ng-click="prevCase()"><img src="/images/index/icon_left_hover.png"></div>-->
+        <div class="swiper-item ng-owl"
+             ng-if="caseList"
+             type="'case'"
+             images="caseList"
+             items="1">
+            <!--<a href="/article/item/{{currentCase.id}}"><img ng-src="{{apiPrefix+currentCase.thumb.url}}"/></a>-->
+        </div>
+        <!--<div class="next" ng-click="nextCase()"><img src="/images/index/icon_right_hover.png"></div>-->
+    </div>
+</div>
+
+<div class="media">
+    <div class="media-content">
+        <h1>
+            <span class="title">媒体中心</span>
+            <span class="subtitle">/ Media Center</span>
+            <a class="other" ng-if="types" ng-repeat="item in types" href="/media?type={{item.type}}">{{item.type}}</a>
+        </h1>
+        <div class="media-list">
+            <div class="media-list1" ng-if="articles">
+                <div class="media-img">
+                    <a href="/article/item/{{currentArticle}}"><img ng-src="{{apiPrefix+currentImg}}"></a>
+                </div>
+            </div>
+
+            <div class="media-list2">
+                <a href="/article/item/{{item.id}}"
+                   ng-repeat="item in articles"
+                   ng-mouseover="articleOver(item)"
+                   class="media-link {{currentArticle === item.id && width > 568 ? 'active' : ''}}">
+                    <div class="media-news">
+                        <div class="news-date">
+                            <p style="font-size: 20px;color: rgb(16, 16, 16)">{{item.published_at | date:'MM-dd'}}</p>
+                            <p style="font-size: 20px">{{item.published_at | date:'yyyy'}}</p>
+                        </div>
+                        <div class="news-title">
+                            <p class="title">{{(item | lan:'title').slice(0,29)}}{{(item | lan:'title').length > 29 ?
+                                '...' : ''}}</p>
+                            <p class="description">{{(item | lan:'description').slice(0,60)}}{{(item |
+                                lan:'description').length > 60 ? '...' : ''}}</p>
+                        </div>
+                    </div>
+                </a>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="status">
+    <div class="mapImg">
+        <img src="/images/index/map.png">
+        <div class="point xinjiang" style="top: 150px;left: 150px" ng-mouseover="showMap('xinjiang')"
+             ng-mouseleave="hideMap('xinjiang')">
+            <i></i>
+            <div class="line" ng-class="{'show_line':show_xinjiang}">
+                <img src="/images/index/line.png">
+            </div>
+            <div class="text" ng-class="{'show_text':show_xinjiang}">
+                <p>99+智能系统基础设施工程</p>
+                <p>99+区块链应用大型项目</p>
+                <p>99+智慧交通行业应用</p>
+            </div>
+        </div>
+        <div class="point guangdong" style="top: 370px;left: 420px" ng-mouseover="showMap('guangdong')"
+             ng-mouseleave="hideMap('guangdong')">
+            <i></i>
+            <div class="line" ng-class="{'show_line':show_guangdong}">
+                <img src="/images/index/line.png">
+            </div>
+            <div class="text" ng-class="{'show_text':show_guangdong}">
+                <p>99+智能系统基础设施工程</p>
+                <p>99+区块链应用大型项目</p>
+                <p>99+智慧交通行业应用</p>
+            </div>
+        </div>
+        <div class="point beijing" style="top: 170px;left: 420px" ng-mouseover="showMap('beijing')"
+             ng-mouseleave="hideMap('beijing')">
+            <i></i>
+            <div class="line" ng-class="{'show_line':show_beijing}">
+                <img src="/images/index/line.png">
+            </div>
+            <div class="text" ng-class="{'show_text':show_beijing}">
+                <p>99+智能系统基础设施工程</p>
+                <p>99+区块链应用大型项目</p>
+                <p>99+智慧交通行业应用</p>
+            </div>
+        </div>
+    </div>
+    <!--<div class="status-content"></div>
+    <div class="status-list">
+        <div class="status-item">
+            <h1 class="animatedNum">6000+</h1>
+            <p>智能系统基础设施建设工程</p>
+            <p>应用覆盖电力、能源、地产、商业综合体</p>
+        </div>
+        <div class="status-item">
+            <h1 class="animatedNum">4500+</h1>
+            <p>区块链应用大型项目</p>
+            <p>区块链应用大型项目、能源、地产、商业综合体</p>
+        </div>
+        <div class="status-item">
+            <h1 class="animatedNum">1200+</h1>
+            <p>智慧交通行业应用</p>
+            <p>应用覆盖全国26个城市、46条地铁线路</p>
+        </div>
+    </div>-->
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

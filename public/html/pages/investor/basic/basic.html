@@ -1,0 +1,22 @@
+<div class="bg-solution" ng-if="item" style="background-position: -140px 0" ng-style="{'background-image':'url({{apiPrefix + item.poster[0].url}})'}"></div>
+
+
+<div class="content-v">
+    <h1 ng-bind="appConfig | lan: 'name'"></h1>
+
+    <h3>基本资料</h3>
+    <p style="margin: 40px 0" ng-bind="item | lan:'description'"></p>
+    <h3 ng-style="{'margin-bottom' : width <= 568 ? '10px' : '0'}">公司基本资料如下：</h3>
+    <div class="basic-info">
+        <div ng-bind-html="item | lan:'content' | html"></div>
+        <img ng-src="{{apiPrefix+item.thumb.url}}">
+    </div>
+
+    <h3>经营范围：</h3>
+    <div style="margin-bottom: 50px" ng-bind-html="appConfig.business_scope | html"></div>
+    <h3>公司网址：</h3>
+    <a href="{{appConfig.url}}" target="_blank">{{appConfig.url}}</a>
+</div>
+
+
+

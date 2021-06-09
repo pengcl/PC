@@ -1,0 +1,13 @@
+<div class="bg-solution" ng-if="item" ng-style="{'background-image':'url({{apiPrefix + item.poster[0].url}})'}"></div>
+<div class="solution-text">
+    <h1>解决方案</h1>
+</div>
+
+<div class="content-s-item" ng-if="article">
+    <h1 ng-bind="article | lan:'title'" style="text-align: left"></h1>
+    <div ng-bind-html="article | lan : 'body' | html"></div>
+</div>
+
+<div class="gallery-img" ng-if="article">
+    <img ng-src="{{apiPrefix + article.thumb.url}}">
+</div>

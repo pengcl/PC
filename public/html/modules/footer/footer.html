@@ -1,0 +1,32 @@
+<div class="footer">
+    <div class="bg-footer">
+        <img src="/images/index/bg_footer.png">
+    </div>
+    <div class="footer-content">
+        <div class="container">
+            <div class="entrance">员工入口</div>
+
+            <div class="footer-scan">
+                <img ng-src="{{apiPrefix+appConfig.code_public.url}}">
+                <p>微信号：{{appConfig.wechat}}</p>
+            </div>
+            <div class="footer-info">
+                <p class="phone">
+                    <span>服务热线：{{appConfig.phone}}</span>
+                </p>
+                <div class="address" ng-if="appAddress" ng-repeat="item in appAddress">
+                    <p>电话：{{item.phone}}</p>
+                    <p>传真：{{item.fax}}</p>
+                    <p>地址：{{item.address}}</p>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="footer-copyright">
+        <div class="container">
+            <p>版权所有 {{appConfig | lan: 'name'}}</p>
+            <p><a href="http://www.miitbeian.gov.cn/" target="_blank" style="color: inherit;text-decoration: none">{{appConfig.icp}}</a></p>
+        </div>
+    </div>
+</div>
+

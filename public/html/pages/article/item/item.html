@@ -1,0 +1,10 @@
+<div class="bg-solution" ng-if="item" ng-style="{'background-image':'url({{apiPrefix + item.poster[0].url}})'}"></div>
+
+<div class="content-s" ng-if="article">
+    <h1 ng-bind="article | lan:'title'"></h1>
+    <p ng-bind="article | lan: 'description'"></p>
+    <div ng-bind-html="article | lan : 'body' | html"></div>
+    <img ng-src="{{apiPrefix+article.thumb.url}}" style="display: block;margin: 0 auto;width: 100%;height: auto">
+</div>
+
+

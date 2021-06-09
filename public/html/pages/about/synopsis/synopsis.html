@@ -1,0 +1,41 @@
+<div class="bg-solution" ng-if="item" ng-style="{'background-image':'url({{apiPrefix + item.poster[0].url}})'}"></div>
+<div class="synopsis-text">
+    <h1>让城市更智慧&nbsp;&nbsp;&nbsp;&nbsp;让世界更安全</h1>
+    <p>MAKE A SMARTER CITY AND A SAFER WORLD</p>
+</div>
+
+<div class="synopsis">
+    <div class="synopsis-title">
+        <h1><span class="title">公司简介</span><span class="subtitle">/ About Us</span></h1>
+    </div>
+
+    <div class="content-a" ng-if="item">
+
+        <div class="left" ng-bind-html="item | lan : 'content' | html"></div>
+        <div class="right">
+            <img ng-src="{{apiPrefix+item.thumb.url}}">
+        </div>
+
+    </div>
+</div>
+
+
+<div class="status-list-a">
+    <div class="bg-status"></div>
+    <div class="status-item">
+        <h1 class="animatedNum">6000+</h1>
+        <p>智能系统基础设施建设工程</p>
+        <p>应用覆盖电力、能源、地产、商业综合体</p>
+    </div>
+    <div class="status-item">
+        <h1 class="animatedNum">4500+</h1>
+        <p>区块链应用大型项目</p>
+        <p>区块链应用大型项目、能源、地产、商业综合体</p>
+    </div>
+    <div class="status-item">
+        <h1 class="animatedNum">1200+</h1>
+        <p>智慧交通行业应用</p>
+        <p>应用覆盖全国26个城市、46条地铁线路</p>
+    </div>
+</div>
+

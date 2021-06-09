@@ -1,0 +1,52 @@
+<div class="bg-solution" ng-if="item" ng-style="{'background-image':'url({{apiPrefix + item.poster[0].url}})'}"></div>
+<div class="solution-text">
+    <h1>解决方案</h1>
+</div>
+
+<div class="content-s" ng-if="articles">
+    <h1 ng-bind="articles[0] | lan:'title'"></h1>
+    <h2 ng-bind="articles[0] | lan:'description'"></h2>
+    <div ng-bind-html="articles[0] | lan : 'body' | html"></div>
+    <div class="gallery">
+        <div class="bottom">
+            <a href="/solution/item/{{articles[5].id}}">
+                <img ng-src="{{apiPrefix+articles[5].thumb.url}}">
+                <div class="title"><span ng-bind="articles[5] | lan:'title'"></span></div>
+            </a>
+        </div>
+
+        <div class="right">
+            <a href="/solution/item/{{articles[4].id}}">
+                <img ng-src="{{apiPrefix+articles[4].thumb.url}}">
+                <div class="title"><span ng-bind="articles[4] | lan:'title'"></span></div>
+            </a>
+        </div>
+
+        <div class="left">
+
+            <div class="middle" ng-style="{'margin-right': width <= 568 ? '0' : '20px' }">
+                <a href="/solution/item/{{articles[2].id}}">
+                    <img ng-src="{{apiPrefix+articles[2].thumb.url}}">
+                    <div class="title"><span ng-bind="articles[2] | lan:'title'"></span></div>
+                </a>
+            </div>
+            <div class="middle">
+                <a href="/solution/item/{{articles[3].id}}">
+                    <img ng-src="{{apiPrefix+articles[3].thumb.url}}">
+                    <div class="title"><span ng-bind="articles[3] | lan:'title'"></span></div>
+                </a>
+            </div>
+            <div class="top">
+                <a href="/solution/item/{{articles[1].id}}">
+                    <img ng-src="{{apiPrefix+articles[1].thumb.url}}">
+                    <div class="title"><span ng-bind="articles[1] | lan:'title'"></span></div>
+                </a>
+            </div>
+        </div>
+
+
+    </div>
+
+</div>
+
+

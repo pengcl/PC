@@ -1,0 +1,98 @@
+<div class="header-menu">
+    <div class="container">
+        <h1 class="logo">
+            <a href="/"><img ng-src="{{apiPrefix+appConfig.logo.url}}"></a>
+        </h1>
+        <ul class="menus">
+            <li ng-repeat="menu in menus track by $index">
+                <div ng-mouseover="showSubmenus(menu.id,$index)"
+                     ng-mouseleave="leaveMenu()"
+                     ng-click="link(menu,submenus)"
+                     class="menu-item"
+                     href="javascript:;"
+                     ng-bind="menu | lan: 'name'">
+                </div>
+                <!--<div class="tip" ng-style="{'width' : currentId === menu.id ? '100%' : '0' }"></div>-->
+                <div class="menu-submenus"
+                     ng-if="currentMenu.id === menu.id && show && submenus.length > 0"
+                     ng-class="currentMenu.id === 3 ? 'hasSubmenu' : ''"
+                     ng-mouseleave="hideSubmenus()">
+                    <ul>
+                        <li ng-repeat="item in submenus" ng-class="currentMenu.id === 3 ? 'hasSubmenu' : ''">
+                            <a ng-click="link(item)"
+                               ng-mouseover="showSubmenu(item)"
+                               style="cursor: pointer"
+                               ng-class="_show && currentSubmenuId === item.id ? 'selected' : ''">
+                                <span ng-bind="item | lan: 'name'"></span>
+                            </a>
+                        </li>
+                        <div class="submenus-list" ng-if="_show && currentSubmenus && currentSubmenus.length > 0">
+                            <a href="/product/item/{{sub.id}}"
+                               style="color: inherit;text-decoration: none"
+                               ng-repeat="sub in currentSubmenus">
+                                <p class="submenus-item"
+                                   ng-bind="sub | lan:'name'">
+                                </p>
+                            </a>
+                        </div>
+                    </ul>
+                </div>
+            </li>
+
+            <li class="extra">
+                <a ng-mouseover="showLan()" href="javascript:;">网站语言</a></li>
+        </ul>
+        <h1 class="content">
+            <a ng-click="showMobileMenu()"><img ng-src="/images/index/content.png"></a>
+        </h1>
+    </div>
+</div>
+
+
+<div ng-if="showlan" class="sub-lan-menu" ng-mouseleave="hideLan()">
+    <ul ng-if="appLanguage">
+        <li ng-repeat="item in appLanguage"
+            ng-click="setLan(item.code)"
+            ng-class="{'selected' : lan === item.code}">
+            <a class="nav-link">{{item.name}}</a>
+        </li>
+    </ul>
+</div>
+
+<div class="mobile-menu {{showMobile ? 'show' : ''}}">
+    <ul>
+        <li ng-repeat="menu in menus track by $index">
+            <a ng-click="link(menu,submenus)"><span ng-bind="menu | lan: 'name'"
+                                                    ng-class="show_mobile['show'+ $index] ? 'selected' : ''"></span></a>
+            <a ng-click="showMobileSub($index)">
+                <img ng-if="menu.menus.length > 0"
+                     ng-src="/images/index/icon_{{show_mobile['show'+ $index] ? 'increase' : 'plus'}}.png">
+            </a>
+            <div class="mobile-sub-list {{show_mobile['show'+ $index] ? 'show' : ''}}">
+                <div class="mobile-sub-menu" ng-repeat="item in menu.menus">
+                    <a ng-click="link(item)">
+                        <span ng-bind="item | lan: 'name'"></span>
+                    </a>
+                    <!--<img src="/images/index/icon_right_mobile.png">-->
+                </div>
+            </div>
+        </li>
+        <li>
+            <span>网站语言</span>
+            <a ng-click="showMobileLanuage()">
+                <img ng-src="/images/index/icon_{{showMobileLan ? 'increase' : 'plus'}}.png">
+            </a>
+            <div class="mobile-sub-list {{showMobileLan ? 'show' : ''}}">
+                <div class="mobile-sub-menu"
+                     ng-repeat="item in appLanguage"
+                     ng-click="setLan(item.code)">
+                    <span ng-bind="item.name"></span>
+                </div>
+            </div>
+            </a>
+        </li>
+    </ul>
+</div>
+
+<div class="overlay" ng-if="showMobile" ng-click="showMobileMenu()"></div>
+

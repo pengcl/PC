@@ -1,0 +1,36 @@
+<div class="bg-solution" ng-if="item" ng-style="{'background-image':'url({{apiPrefix + item.poster[0].url}})'}"></div>
+<div class="case-text">
+    <h1>经典案例</h1>
+</div>
+
+
+<div class="content-c">
+    <ul ng-if="types">
+        <li ng-repeat="item in types"
+            ng-class="{'selected' : item.type === currentType}"
+            style="cursor:pointer;"
+            ng-click="select(item.type)">{{item.type}}
+        </li>
+    </ul>
+    <div style="clear: both"></div>
+    <div class="gallery-case" ng-if="articles">
+
+        <div ng-repeat="item in articles track by $index"
+             class="gallery-item {{'item'+$index}}"
+             repeat-finish="renderFinish()">
+            <a href="/article/item/{{item.id}}" style="text-decoration: none">
+                <img ng-src="{{apiPrefix+item.thumb.url}}">
+                <div class="gallery-content">
+                    <h3 ng-bind="item | lan:'title'"></h3>
+                    <p ng-bind="item | lan:'description'"></p>
+                </div>
+                <!--<h4>{{item.published_at | date:'MM-dd'}} / {{item.published_at | date:'yyyy'}}
+                    <img src="/images/index/gray.png"></h4>-->
+            </a>
+        </div>
+
+    </div>
+</div>
+
+
+

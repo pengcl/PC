@@ -1,0 +1,86 @@
+<div class="bg-solution" ng-if="item" ng-style="{'background-image':'url({{apiPrefix + item.poster[0].url}})'}"></div>
+<div class="resource-text">
+    <h1>人力资源</h1>
+</div>
+
+<div class="content-r">
+    <div class="gallery-resource1">
+        <div class="gallery-item">
+            <a href="/article/item/{{imgs[0].id}}" style="color: inherit;text-decoration: none">
+                <h1><span class="title">人才战略</span><span class="subtitle">/Talent Strategy</span></h1>
+                <img ng-src="{{apiPrefix+imgs[0].thumb.url}}">
+            </a>
+        </div>
+
+    </div>
+
+    <div class="gallery-resource2">
+        <div class="gallery-item">
+            <a href="/article/item/{{imgs[1].id}}" style="color: inherit;text-decoration: none">
+                <h1><span class="title">人才理念</span><span class="subtitle">/Talent Concept</span></h1>
+                <img ng-src="{{apiPrefix+imgs[1].thumb.url}}">
+            </a>
+        </div>
+
+    </div>
+
+    <div class="resource-content1" ng-if="articles">
+        <h1>
+            <span class="title">{{articles[0].type}}</span>
+            <span class="subtitle">/Personnel Training</span>
+        </h1>
+        <div class="gallery-case">
+            <div class="gallery-item" ng-repeat="item in articles[0].content">
+                <a href="/article/item/{{item.id}}" style="text-decoration: none">
+                    <img ng-src="{{apiPrefix+item.thumb.url}}">
+                    <div class="gallery-content">
+                        <h3 ng-bind="item | lan:'title'"></h3>
+                        <p ng-bind="item | lan:'description'"></p>
+                    </div>
+                </a>
+            </div>
+
+        </div>
+    </div>
+
+    <div class="resource-content2" ng-if="articles">
+        <h1>
+            <span class="title">{{articles[1].type}}</span>
+            <span class="subtitle">/Employee Care</span>
+        </h1>
+        <div class="gallery-case">
+            <div class="gallery-item" ng-repeat="item in articles[1].content">
+                <a href="/article/item/{{item.id}}" style="text-decoration: none">
+                    <img ng-src="{{apiPrefix+item.thumb.url}}">
+                    <div class="gallery-content">
+                        <h3 ng-bind="item | lan:'title'"></h3>
+                        <p ng-bind="item | lan:'description'"></p>
+                    </div>
+                </a>
+            </div>
+
+        </div>
+    </div>
+
+    <div class="resource-content3" ng-if="articles">
+        <h1>
+            <span class="title">{{articles[2].type}}</span>
+            <span class="subtitle">/Talent Recruitment</span>
+        </h1>
+        <div class="gallery-case">
+            <div class="gallery-item" ng-repeat="item in articles[2].content">
+                <a href="/article/item/{{item.id}}" style="text-decoration: none">
+                    <img ng-src="{{apiPrefix+item.thumb.url}}">
+                    <div class="gallery-content">
+                        <h3 ng-bind="item | lan:'title'"></h3>
+                        <p ng-bind="item | lan:'description'"></p>
+                    </div>
+                </a>
+            </div>
+
+        </div>
+    </div>
+</div>
+
+
+
