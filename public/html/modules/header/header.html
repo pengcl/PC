@@ -18,7 +18,7 @@
                      ng-class="currentMenu.id === 3 ? 'hasSubmenu' : ''"
                      ng-mouseleave="hideSubmenus()">
                     <ul>
-                        <li ng-repeat="item in submenus" ng-class="currentMenu.id === 3 ? 'hasSubmenu' : ''">
+                        <li ng-repeat="item in submenus" class="{{item.menus.length>0 ? 'has-sub-menus' : ''}}" ng-class="currentMenu.id === 3 ? 'hasSubmenu' : ''">
                             <a ng-click="link(item)"
                                ng-mouseover="showSubmenu(item)"
                                style="cursor: pointer"
@@ -27,7 +27,7 @@
                             </a>
                         </li>
                         <div class="submenus-list" ng-if="_show && currentSubmenus && currentSubmenus.length > 0">
-                            <a href="/product/item/{{sub.id}}"
+                            <a href="{{sub.path}}/{{sub.id}}"
                                style="color: inherit;text-decoration: none"
                                ng-repeat="sub in currentSubmenus">
                                 <p class="submenus-item"

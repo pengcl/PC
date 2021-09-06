@@ -8,16 +8,16 @@
 
             <div class="footer-scan">
                 <img ng-src="{{apiPrefix+appConfig.code_public.url}}">
-                <p>微信号：{{appConfig.wechat}}</p>
+                <p ng-if="appConfig.wechat">微信号：{{appConfig.wechat}}</p>
             </div>
             <div class="footer-info">
-                <p class="phone">
+                <p ng-if="appConfig.phone" class="phone">
                     <span>服务热线：{{appConfig.phone}}</span>
                 </p>
                 <div class="address" ng-if="appAddress" ng-repeat="item in appAddress">
-                    <p>电话：{{item.phone}}</p>
-                    <p>传真：{{item.fax}}</p>
-                    <p>地址：{{item.address}}</p>
+                    <p ng-if="item.phone">电话：{{item.phone}}</p>
+                    <p ng-if="item.fax">传真：{{item.fax}}</p>
+                    <p ng-if="item.address">地址：{{item.address}}</p>
                 </div>
             </div>
         </div>

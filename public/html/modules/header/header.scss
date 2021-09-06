@@ -95,6 +95,10 @@
             margin: 0;
             line-height: 25px;
 
+            &.has-sub-menus {
+              width: 444px;
+            }
+
             &.hasSubmenu {
               width: 444px;
 
